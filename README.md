@@ -36,7 +36,7 @@ The behavior of dotenv.fish can be altered using the following config variables,
 By default dotenv.fish looks for the `.env.fish` file in the current directory. If you want it to source another file you can modify the `FISH_DOTENV_FILE` variable. For example, this will make the plugin look for files named `.dotenv.fish` and load them:
 
 ```fish
-set FISH_DOTENV_FILE=.dotenv.fish
+set -g FISH_DOTENV_FILE=.dotenv.fish
 ```
 
 ### FISH_DOTENV_ALLOWLIST and FISH_DOTENV_BLOCKLIST
