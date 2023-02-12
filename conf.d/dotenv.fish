@@ -55,3 +55,5 @@ function _fish_dotenv_hook --on-variable PWD
         end
     end
 end
+
+_fish_dotenv_hook
