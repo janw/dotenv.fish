@@ -34,7 +34,9 @@ function _fish_dotenv_hook --on-variable PWD
     touch "$FISH_DOTENV_ALLOWLIST"
 
     # Check if env file is allowed or ask for confirmation
-    if ! command grep -Fx -q "$dirpath" "$FISH_DOTENV_ALLOWLIST" &>/dev/null
+    if command grep -Fx -q "$dirpath" "$FISH_DOTENV_ALLOWLIST" &>/dev/null
+        _fish_dotenv_source
+    else
         read -n 1 \
             -f confirmation \
             --prompt-str="dotenv: Found '$FISH_DOTENV_FILE' file. Source it? ([N]o/[y]es/[a]lways/n[e]ver) "
